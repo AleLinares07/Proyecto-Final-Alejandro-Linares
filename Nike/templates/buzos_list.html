@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+    <body>
+        
+        <h1 style="color:gray">Esta es la Vista de Buzos Nike</h1>
+        
+
+        <ul style="color: green">
+            
+            {% for buzo in buzos %}
+                <li>
+                    <a href="{% url 'BuzosDetail' buzo.id %}">{{buzo}}</a>
+                </li>
+                <div>
+                    <button>
+                        <a href="{% url 'BuzosDelete' buzo.id %}">Eliminar</a>
+                    </button>
+                    <button>
+                        <a href="{% url 'BuzosUpdate' buzo.id %}">Editar</a>
+                    </button>
+                    
+                </div>
+            {% endfor %}
+            
+        </ul>
+        <a href="{% url 'BuzosCreate' %}">Añadir Buzo</a>
+
+
+    </body>
+    
+            
+{% endblock ContenidoQueCambia %}

@@ -1,0 +1,21 @@
+
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'Inicio' %}" >Nike</a>
+        <a class="navbar-brand" href="{% url 'ZapatillasList' %}">Zapatillas</a>
+        <a class="navbar-brand" href="{% url 'BuzosList' %}">Buzos</a>
+        <a class="navbar-brand" href="{% url 'PantalonesList' %}">Pantalones</a>
+        
+        {% if user.is_authenticated %}
+            {% if url %}
+                <img src="{{url}}" height="40px" alt="avatar">
+            {% endif %}  
+            <p>Bienvenido {{user.username}}</p>
+            <a class="btn btn-primary" href="{% url 'Logout' %}">Logout</a>
+        {% else %}
+            <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>
+        {% endif %}
+            
+        
+    </div>
+</nav>

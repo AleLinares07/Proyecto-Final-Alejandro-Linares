@@ -1,0 +1,27 @@
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+    <body>
+        
+        <h1 style="color:gray">Esta es la Vista de Zapatillas Nike</h1>
+        
+
+        <ul style="color: green">
+            
+            {% for zapatilla in zapatillas %}
+                <li>{{zapatilla}}</li>
+                <div>
+                    <form action="{% url 'EliminarZapatillas' zapatilla.id %}" method="post">{% csrf_token %}
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            {% endfor %}
+            
+        </ul>
+        <a href="{% url 'AñadirZapatillas' %}">Añadir Zapatillas</a>
+
+
+    </body>
+    
+            
+{% endblock ContenidoQueCambia %}

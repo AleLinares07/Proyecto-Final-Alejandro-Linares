@@ -1,0 +1,23 @@
+
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+    <body>
+        
+        <h1 style="color:gray">Esta es la Vista de Pantalones Nike</h1>
+        
+
+        <ul style="color: green">
+            
+            {% for pantalon in pantalones %}
+                <li>{{pantalon}}</li>
+            {% endfor %}
+                
+        </ul>
+
+    </body>
+    
+            
+{% endblock ContenidoQueCambia %}
+    
+            

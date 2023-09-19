@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+    <h1>Resultado de Busqueda</h1>
+
+    <ul>
+        {% for zapatilla in zapatillas %}
+            <li style="color: green">
+                {{zapatilla.modelo}} - {{zapatilla.color}} - {{zapatilla.talle}}
+            </li>
+            
+        {% endfor %}
+            
+    </ul>
+
+
+{% endblock ContenidoQueCambia %}

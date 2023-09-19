@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+
+     <form action="{% url 'AñadirZapatillas' %}" method="post">{% csrf_token %}
+
+        {{miFormulario.as_ul}}
+
+        <button type="submit">Enviar</button>
+
+     </form>    
+{% endblock ContenidoQueCambia %}

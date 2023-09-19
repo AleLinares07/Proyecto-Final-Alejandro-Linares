@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+
+{% block ContenidoQueCambia %}
+    <body>
+        
+        <h1 style="color:gray">Esta es la Vista de Zapatillas Nike</h1>
+        
+
+        <ul style="color: green">
+            
+            {% for zapatilla in zapatillas %}
+                <li>
+                    <a href="{% url 'ZapatillasDetail' zapatilla.id %}">{{zapatilla}}</a>
+                </li>
+                <div>
+                    <button>
+                        <a href="{% url 'ZapatillasDelete' zapatilla.id %}">Eliminar</a>
+                    </button>
+                    <button>
+                        <a href="{% url 'ZapatillasUpdate' zapatilla.id %}">Editar</a>
+                    </button>
+                    
+                </div>
+            {% endfor %}
+            
+        </ul>
+        <a href="{% url 'ZapatillasCreate' %}">Añadir Zapatillas</a>
+
+
+    </body>
+    
+            
+{% endblock ContenidoQueCambia %}
